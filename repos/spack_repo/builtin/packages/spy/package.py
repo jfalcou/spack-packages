@@ -12,7 +12,7 @@ class Spy(CMakePackage):
     and SIMD extensions."""
 
     homepage = "https://jfalcou.github.io/spy/"
-    url = "https://github.com/jfalcou/spy/archive/refs/tags/2.0.0.tar.gz"
+    url = "https://github.com/jfalcou/spy/archive/refs/tags/3.0.0.tar.gz"
     git = "https://github.com/jfalcou/spy.git"
 
     maintainers("jfalcou")
@@ -20,6 +20,7 @@ class Spy(CMakePackage):
     license("BSL-1.0")
 
     version("main", branch="main")
+    version("3.0.0", sha256="2bdbb346515e1067b5215a412bfe9eb0babec2fb93ffd2d75f7a39a97c72e9ce")
     version("2.0.0", sha256="a2ab9dc30356defa319f104f4e180b08438dbea0e904864510c532b1299b7fff")
 
     depends_on("cxx", type="build")
