@@ -11,13 +11,14 @@ class Kumi(CMakePackage):
     """KUMI - C++20 Tuple & Tuple-base Algorithms Library."""
 
     homepage = "https://jfalcou.github.io/kumi/"
-    url = "https://github.com/jfalcou/kumi/archive/refs/tags/v4.0.tar.gz"
+    url = "https://github.com/jfalcou/kumi/archive/refs/tags/v5.0.tar.gz"
     maintainers("jfalcou")
     git = "https://github.com/jfalcou/kumi.git"
 
     license("BSL-1.0")
 
     version("main", branch="main")
+    version("5.0", sha256="175569a39837988b6349f2bc7b7bab757c09d29e9503e20e188c9afa1c88e474")
     version("4.0", sha256="f788ee60b814a07d2b2148dd86b5153261b582ac5a248905cbf3e19423a0f7cd")
     version("3.1", sha256="2c1c07e22ec6687d338dfb3f0586e9af186c00af047b496708401d2fce68e7b8")
     version("3.0", sha256="166b621e475935d2a3a195d13937a285060812c1fd7a95575a9c7b1dc425f2a1")
@@ -31,6 +32,7 @@ class Kumi(CMakePackage):
     # Since 3.1 the build is written with copacabana, which CPM fetches at configure
     # time; the prefix installed here is handed to CPM instead, see cmake_args.
     depends_on("copacabana", type="build", when="@3.1:")
+    depends_on("copacabana@8:", type="build", when="@5.0:")
     depends_on("tts", type="test", when="@3.1:")
 
     def cmake_args(self):
